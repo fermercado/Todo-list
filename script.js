@@ -1,4 +1,5 @@
-const getLocal = () => JSON.parse(localStorage.getItem('taskList')) ?? []
+const getLocal = () => JSON.parse(localStorage.getItem('taskList')) || []
+
 const setLocal = localStge =>
   localStorage.setItem('taskList', JSON.stringify(localStge))
 
@@ -73,19 +74,29 @@ const updadeItem = index => {
   updateWindow()
 }
 
+const updadeDesc = index => {
+  const localStge = getLocal()
+  const desc = document.querySelector('textarea').value
+  console.log(desc)
+  localStge[index].descricao = desc
+  setLocal(localStge)
+  updateWindow()
+}
+
 const clickItem = event => {
   const element = event.target
   if (element.type === 'button') {
     const index = element.dataset.index
     removerItem(index)
   } else if (element.type === 'checkbox') {
-    console.log(element.type)
     const index = element.dataset.index
     updadeItem(index)
+  } else if (element.id === 'buttonDesc') {
+    const index = element.dataset.index
+    updadeDesc(index)
   }
 }
 
 document.getElementById('newItem').addEventListener('keypress', createNewItem)
 document.getElementById('todoList').addEventListener('click', clickItem)
-
 updateWindow()
