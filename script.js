@@ -76,7 +76,7 @@ const updadeItem = index => {
 
 const updadeDesc = index => {
   const localStge = getLocal()
-  const desc = document.querySelector('textarea').value
+  const desc = document.querySelectorAll('textarea')[index].value
   console.log(desc)
   localStge[index].descricao = desc
   setLocal(localStge)
