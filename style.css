@@ -17,6 +17,8 @@ body {
     font: bold 2rem 'Open Sans', sans-serif;
 }
 
+
+
 .todo {
     display: flex;
     width: 50vw;
@@ -31,7 +33,7 @@ body {
     background-color: var(--secondary-color);
     width: 100%;
     height: 120px;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     margin-top: 50px;
     box-shadow: 1px 1px 5px var(--secondary-color);
@@ -40,15 +42,13 @@ body {
 }
 
 .todo__list {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
     width: 100%;
-    
-    gap: 40px;
 }
 
 .todo__item{
     display: flex;
+    max-width: 300px;
     width: 100%;
     border-radius: 10px;
     justify-content: space-between;
@@ -63,7 +63,7 @@ body {
 .todo__item:hover {
     cursor: pointer;
     transition: all .5s ease;
-    background-color: var(--secondary-color);
+    background-color: #9999;
     color: var(--primary-color);
 }
 
