@@ -7,10 +7,12 @@ const createItem = (nameList, status, descricao, index) => {
   const item = document.createElement('label')
   item.classList.add('todo__item')
   item.innerHTML = `
-    <div class="todo__top">
-              <input type="checkbox" ${status} data-index = '${index}'/>
+  <div id="container">
+  <div class="todo__top">
+              <input id="teste" type="checkbox" ${status} data-index = '${index}'/>
               <div>${nameList} </div>
-              <input type="button" value="X" data-index = '${index}' />
+              <i id="lixo"class="fa-solid fa-trash-can" data-index = '${index}'></i>
+              
             </div>
             <div class="desc-list">
                 <textarea  
@@ -24,7 +26,8 @@ const createItem = (nameList, status, descricao, index) => {
                   placeholder="Descricao da tarefa"
                   >${descricao}</textarea> 
             </div>
-            <button id="buttonDesc"  data-index = '${index}'>Inserir descricao</button>
+            <button id="buttonDesc"  data-index = '${index}'>Inserir descricao</button></div>
+
   `
 
   document.getElementById('todoList').appendChild(item)
@@ -69,7 +72,12 @@ const removerItem = index => {
 
 const updadeItem = index => {
   const localStge = getLocal()
+  const bla = document.getElementById('container')
   localStge[index].status = localStge[index].status === '' ? 'checked' : ''
+  if (localStge[index].status === 'checked') {
+    console.log(bla)
+    bla.style.backgroundColor = 'red'
+  }
   setLocal(localStge)
   updateWindow()
 }
@@ -85,7 +93,7 @@ const updadeDesc = index => {
 
 const clickItem = event => {
   const element = event.target
-  if (element.type === 'button') {
+  if (element.id === 'lixo') {
     const index = element.dataset.index
     removerItem(index)
   } else if (element.type === 'checkbox') {
