@@ -45,7 +45,11 @@ body {
 
     }
 
-#container {
+
+
+
+
+.todo__item{
     display: flex;
     border-radius: 10px;
     justify-content: space-between;
@@ -53,20 +57,13 @@ body {
     flex-direction: column;
     padding: 12px;
     box-shadow: -5px 5px 20px #0f0f0b3d;
-    background-color: rgb(56, 123, 185);
-
-}
-
-
-
-.todo__item{
     display: flex;
     width: 100%;
     border-radius: 10px;
     justify-content: space-between;
     align-items: center;
+    background-color: rgb(56, 123, 185);
  
-   
 }
 .todo__item > div {
     width: 100%;
@@ -74,7 +71,7 @@ body {
 .todo__item:hover {
 
     cursor: pointer;
-    transition: all .3s ease;
+
 }
 
 .todo__top {
@@ -121,7 +118,7 @@ textarea::placeholder {
 }
 
 
-.todo__top > input[type='checkbox']:checked  + div {
+.todo__top > input[type='checkbox']:checked + div {
     text-decoration:line-through;
 }
 
@@ -180,7 +177,3 @@ textarea::placeholder {
 }
 
 
-#container.ativo {
-
-    background-color: #155309;
-}
