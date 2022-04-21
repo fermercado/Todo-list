@@ -7,7 +7,7 @@ const createItem = (nameList, status, descricao, index) => {
   const item = document.createElement('label')
   item.classList.add('todo__item')
   item.innerHTML = `
-  <div id="container">
+  <div >
   <div class="todo__top">
               <input id="teste" type="checkbox" ${status} data-index = '${index}'/>
               <div>${nameList} </div>
