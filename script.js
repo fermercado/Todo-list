@@ -69,17 +69,19 @@ const removerItem = index => {
   setLocal(localStge)
   updateWindow()
 }
-
 const updadeItem = index => {
   const localStge = getLocal()
-  const bla = document.getElementById('container')
+  const classColor = document.querySelectorAll('.todo__item')[index]
   localStge[index].status = localStge[index].status === '' ? 'checked' : ''
   if (localStge[index].status === 'checked') {
-    console.log(bla)
-    bla.style.backgroundColor = 'red'
+    classColor.style.backgroundColor = 'rgb(38, 189, 106)'
+  } else {
+    localStge[index].status = ''
+    classColor.style.backgroundColor = ''
   }
+
   setLocal(localStge)
-  updateWindow()
+  // updateWindow()
 }
 
 const updadeDesc = index => {
@@ -87,6 +89,7 @@ const updadeDesc = index => {
   const desc = document.querySelectorAll('textarea')[index].value
   console.log(desc)
   localStge[index].descricao = desc
+
   setLocal(localStge)
   updateWindow()
 }
@@ -96,7 +99,9 @@ const clickItem = event => {
   if (element.id === 'lixo') {
     const index = element.dataset.index
     removerItem(index)
-  } else if (element.type === 'checkbox') {
+  } else if (element.id === 'teste') {
+    // const des = document.querySelector('.todo__item')
+    // des.classList.toggle('ativo')
     const index = element.dataset.index
     updadeItem(index)
   } else if (element.id === 'buttonDesc') {
