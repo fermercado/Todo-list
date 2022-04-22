@@ -8,7 +8,7 @@
 
 IMPLEMENTAÇÕES
 
-[X] Adicionar tarefas, podendo inserir descrição em cada uma delas indivudualmente;
+[X] Adicionar tarefas, podendo inserir descrição em cada uma delas individualmente;
 
 [X] Dar 'check' nas tarefas, marcando elas como concluidas;
 
