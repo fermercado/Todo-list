@@ -63,11 +63,16 @@ body {
     justify-content: space-between;
     align-items: center;
     background-color: rgb(56, 123, 185);
+    
  
 }
 .todo__item > div {
     width: 100%;
 }
+
+
+
+
 .todo__item:hover {
 
     cursor: pointer;
@@ -177,3 +182,27 @@ textarea::placeholder {
 }
 
 
+
+@media (max-width: 1450px) {
+    .todo__list {
+        grid-template-columns: repeat(2, 1fr);
+        }
+
+}
+
+@media (max-width: 800px) {
+    .todo__list {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .todo {
+    
+        width: 90vw;
+    
+        gap: 15px;
+    }
+    
+
+        
+
+}
