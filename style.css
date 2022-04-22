@@ -206,3 +206,13 @@ textarea::placeholder {
         
 
 }
+@media (max-width: 530px) {
+
+    .todo__new-item > input{
+       font-size: 12px;
+    }
+   
+
+        
+
+}
