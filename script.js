@@ -6,6 +6,9 @@ const setLocal = localStge =>
 const createItem = (nameList, status, descricao, index) => {
   const item = document.createElement('label')
   item.classList.add('todo__item')
+  if (status === 'checked') {
+    item.classList.add('ativo')
+  }
   item.innerHTML = `
   <div >
   <div class="todo__top">
@@ -57,6 +60,7 @@ const createNewItem = event => {
       status: '',
       descricao: ''
     })
+
     setLocal(localStge)
     event.target.value = ''
     updateWindow()
@@ -74,14 +78,14 @@ const updadeItem = index => {
   const classColor = document.querySelectorAll('.todo__item')[index]
   localStge[index].status = localStge[index].status === '' ? 'checked' : ''
   if (localStge[index].status === 'checked') {
-    classColor.style.backgroundColor = 'rgb(38, 189, 106)'
+    classColor.classList.add('ativo')
   } else {
     localStge[index].status = ''
-    classColor.style.backgroundColor = ''
+    classColor.classList.remove('ativo')
   }
 
   setLocal(localStge)
-  // updateWindow()
+  updateWindow()
 }
 
 const updadeDesc = index => {
