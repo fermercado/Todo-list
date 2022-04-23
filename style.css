@@ -181,6 +181,10 @@ textarea::placeholder {
     transition: all ease .2s;
 }
 
+.todo__item.ativo{
+    background-color: rgb(38, 189, 106);
+}
+
 
 
 @media (max-width: 1450px) {
